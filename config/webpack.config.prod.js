@@ -149,7 +149,18 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-              
+              "presets": [
+                "react-app"
+              ],
+              "plugins": [
+                [
+                  "import",
+                  {
+                    "libraryName": "antd",
+                    "style": true
+                  }
+                ]
+              ],
               compact: true,
             },
           },
@@ -184,7 +195,15 @@ module.exports = {
                 },
               },
               {
-                loader:require.resolve('less-loader')
+                loader:require.resolve('less-loader'),
+                options: {
+                  modules: false,
+                  // https://github.com/ant-design/ant-motion/issues/44  =>  .bezierEasingMixin(); 不加这一条会报错
+                  javascriptEnabled: true,  
+                  modifyVars: {
+                      "@primary-color": "#f9c700"
+                  }
+                }
               }
             ],
           },
