@@ -201,7 +201,7 @@ module.exports = {
                   // https://github.com/ant-design/ant-motion/issues/44  =>  .bezierEasingMixin(); 不加这一条会报错
                   javascriptEnabled: true,  
                   modifyVars: {
-                      "@primary-color": "#f9c700"
+                      "@primary-color": "#21bdff"
                   }
                 }
               }
