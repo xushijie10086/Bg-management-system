@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import NavLeft from './components/NavLeft';
 import './style/common.less';
 // import Home from './pages/home'
-import Router from "./pages/router-demo/router2/router";
+import Router from "./pages/router-demo/router3/router";
 export default class Admin extends React.Component {
 
     render(){
