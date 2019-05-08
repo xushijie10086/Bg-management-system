@@ -1,8 +1,9 @@
 
 import React from 'react';
-import { Menu, Icon } from 'antd';
+import { Menu } from 'antd';
 import MenuConfig from "../../config/menuConfig";
 import './index.less';
+import { NavLink } from 'react-router-dom' 
 
 const SubMenu = Menu.SubMenu;
 export default class NavLeft extends React.Component {
@@ -24,7 +25,10 @@ export default class NavLeft extends React.Component {
                    </SubMenu>
                 ) 
             }
-            return <Menu.Item key={item.key}>{item.title}</Menu.Item>
+            return <Menu.Item key={item.key}>
+            {/* 左侧导航栏路由跳转 */}
+                <NavLink to={item.key}>{item.title}</NavLink>
+            </Menu.Item>
         })
     }
 

@@ -9,7 +9,7 @@ const menulist = [
         children: [
             {
                 title:'按钮',
-                key:'/ui/buttons',
+                key:'/admin/ui/buttons',
             },
             {
                 title:'弹框',
