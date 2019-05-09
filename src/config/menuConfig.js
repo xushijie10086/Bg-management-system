@@ -29,7 +29,7 @@ const menulist = [
             },
             {
                 title:'Tab页签',
-                key:'/ui/tabs',
+                key:'/admin/ui/taps',
             },
             {
                 title:'图片画廊',

@@ -9,6 +9,7 @@ import Modals from "./pages/ui/modals";
 import Loadings from "./pages/ui/loadings/loadings";
 import Notifications from "./pages/ui/notifications";
 import Messages from "./pages/ui/messages";
+import Tabs from './pages/ui/taps';
 
 export default class ERouter extends React.Component {
   render() {
@@ -32,6 +33,7 @@ export default class ERouter extends React.Component {
                     <Route path="/admin/ui/loadings" component={Loadings} />
                     <Route path="/admin/ui/notifications" component={Notifications} />
                     <Route path="/admin/ui/messages" component={Messages} />
+                    <Route path="/admin/ui/taps" component={Tabs} />
                     <Route component={NoMatch} />
                   </Switch>
                 </Admin>
