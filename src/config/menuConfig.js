@@ -17,7 +17,7 @@ const menulist = [
             },
             {
                 title:'Loading',
-                key:'/ui/loadings',
+                key:'/admin/ui/loadings',
             },
             {
                 title:'通知提醒',
