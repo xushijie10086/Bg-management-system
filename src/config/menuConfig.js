@@ -13,7 +13,7 @@ const menulist = [
             },
             {
                 title:'弹框',
-                key:'/ui/modals',
+                key:'/admin/ui/modals',
             },
             {
                 title:'Loading',
