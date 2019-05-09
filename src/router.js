@@ -8,6 +8,7 @@ import NoMatch from "./pages/nomatch";
 import Modals from "./pages/ui/modals";
 import Loadings from "./pages/ui/loadings/loadings";
 import Notifications from "./pages/ui/notifications";
+import Messages from "./pages/ui/messages";
 
 export default class ERouter extends React.Component {
   render() {
@@ -30,6 +31,7 @@ export default class ERouter extends React.Component {
                     <Route path="/admin/ui/modals" component={Modals} />
                     <Route path="/admin/ui/loadings" component={Loadings} />
                     <Route path="/admin/ui/notifications" component={Notifications} />
+                    <Route path="/admin/ui/messages" component={Messages} />
                     <Route component={NoMatch} />
                   </Switch>
                 </Admin>
