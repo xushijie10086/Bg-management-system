@@ -1,7 +1,7 @@
 import React from "react";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import App from "./App";
-import Login from "./pages/login";
+import FormLogin from "./pages/form/login";
 import Admin from "./admin";
 import Buttons from "./pages/ui/buttons";
 import NoMatch from "./pages/nomatch";
@@ -22,7 +22,7 @@ export default class ERouter extends React.Component {
         <App>
           <Switch>
             {/* login组件 与Admin 以及 后期的订单详情组件为同级组件 */}
-            <Route path="/login" component={Login} />
+            <Route path="/login" component={FormLogin} />
             {/* Admin组件内嵌套子组件 */}
             <Route
               path="/admin"
@@ -38,12 +38,13 @@ export default class ERouter extends React.Component {
                     <Route path="/admin/ui/taps" component={Tabs} />
                     <Route path="/admin/ui/gallery" component={Gallery} />
                     <Route path="/admin/ui/carousel" component={Carousels} />
+                    <Route path="/admin/form/login" component={FormLogin} />
                     <Route component={NoMatch} />
                   </Switch>
                 </Admin>
               )}
             />
-            <Route path="/order/detail" component={Login} />
+            <Route path="/order/detail" component={FormLogin} />
             <Route component={NoMatch} />
           </Switch>
         </App>

@@ -43,11 +43,11 @@ const menulist = [
     },
     {
         title:'表单',
-        key:'/form',
+        key:'/admin/form',
         children:[
             {
                 title:'登录',
-                key:'/form/login',
+                key:'/admin/form/login',
             },
             {
                 title:'注册',
