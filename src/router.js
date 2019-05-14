@@ -11,6 +11,7 @@ import Notifications from "./pages/ui/notifications";
 import Messages from "./pages/ui/messages";
 import Tabs from './pages/ui/taps';
 import Gallery from "./pages/ui/gallery";
+import Carousels from "./pages/ui/carousel";
 
 export default class ERouter extends React.Component {
   render() {
@@ -36,6 +37,7 @@ export default class ERouter extends React.Component {
                     <Route path="/admin/ui/messages" component={Messages} />
                     <Route path="/admin/ui/taps" component={Tabs} />
                     <Route path="/admin/ui/gallery" component={Gallery} />
+                    <Route path="/admin/ui/carousel" component={Carousels} />
                     <Route component={NoMatch} />
                   </Switch>
                 </Admin>
