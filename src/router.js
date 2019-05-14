@@ -2,6 +2,7 @@ import React from "react";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import App from "./App";
 import FormLogin from "./pages/form/login";
+import FormRegister from "./pages/form/register";
 import Admin from "./admin";
 import Buttons from "./pages/ui/buttons";
 import NoMatch from "./pages/nomatch";
@@ -39,6 +40,7 @@ export default class ERouter extends React.Component {
                     <Route path="/admin/ui/gallery" component={Gallery} />
                     <Route path="/admin/ui/carousel" component={Carousels} />
                     <Route path="/admin/form/login" component={FormLogin} />
+                    <Route path="/admin/form/reg" component={FormRegister} />
                     <Route component={NoMatch} />
                   </Switch>
                 </Admin>
