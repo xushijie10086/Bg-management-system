@@ -13,6 +13,7 @@ import Messages from "./pages/ui/messages";
 import Tabs from './pages/ui/taps';
 import Gallery from "./pages/ui/gallery";
 import Carousels from "./pages/ui/carousel";
+import BasicTable from "./pages/table/basicTable";
 
 export default class ERouter extends React.Component {
   render() {
@@ -41,6 +42,7 @@ export default class ERouter extends React.Component {
                     <Route path="/admin/ui/carousel" component={Carousels} />
                     <Route path="/admin/form/login" component={FormLogin} />
                     <Route path="/admin/form/reg" component={FormRegister} />
+                    <Route path="/admin/table/basic" component={BasicTable} />
                     <Route component={NoMatch} />
                   </Switch>
                 </Admin>

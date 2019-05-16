@@ -61,7 +61,7 @@ const menulist = [
         children:[
             {
                 title:'基础表格',
-                key:'/table/basic',
+                key:'/admin/table/basic',
             },
             {
                 title:'高级表格',
