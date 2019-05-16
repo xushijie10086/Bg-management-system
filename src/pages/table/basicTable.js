@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { Card, Table } from 'antd'
-
+import axios from './../../axios/index'
 
 export default class BasicTable extends Component {
   state = {
-    dataSource: null
+    dataSource: null,
+    dataSource2:[]
   }
   componentDidMount(){
     const dataSource = [
@@ -42,7 +43,30 @@ export default class BasicTable extends Component {
         time:'09:00'
       }
     ]
-    this.setState({dataSource})
+    this.setState({dataSource});
+    this.request();
+    
+  }
+  // 动态获取Mock数据
+  request = () => {
+    // let baseUrl = 'https://www.easy-mock.com/mock/5cdd6c2dde6549706f7ef693/qiyuMock';
+    // axios.get(baseUrl + '/table/list').then(res => {
+    //   if(res.status === 200 && res.data.code === 0){
+    //     this.setState({dataSource2:res.data.result})
+    //   }
+    // })
+    axios.ajax({
+      url: '/table/list',
+      method: 'get',
+      data:{
+        params:{
+          page:1
+        }
+        // ,isShowLoading: false
+      }
+    }).then(res => {
+      this.setState({dataSource2:res.result})
+    })
   }
   render() {
     const columns = [
@@ -60,16 +84,39 @@ export default class BasicTable extends Component {
         title: '性别',
         dataIndex: 'sex',
         key: 'sex',
+        render(sex){
+          return sex === 1 ? '男' : '女'
+        }
       },
       {
         title: '状态',
         dataIndex: 'state',
         key: 'state',
+        render(state){
+          let config = {
+            '1': 'a',
+            '2': 'b',
+            '3': 'c',
+            '4': 'd',
+            '5': 'e',
+          }
+          return config[state]
+        }
       },
       {
         title: '爱好',
         dataIndex: 'interest',
         key: 'intersect',
+        render(state) {
+          const config = {
+            "1":'篮球',
+            "2":'足球',
+            "3":'橄榄球',
+            "4":'乒乓球',
+            "5":'网球',
+          }
+          return config[state]
+        }
       },
       {
         title: '生日',
@@ -93,7 +140,7 @@ export default class BasicTable extends Component {
       },
 
     ];
-    const {dataSource} = this.state;
+    const {dataSource, dataSource2} = this.state;
     return (
       <div>
           <Card title='基础表格'>
@@ -101,6 +148,15 @@ export default class BasicTable extends Component {
                 bordered
                 columns={columns} 
                 dataSource={dataSource} 
+                pagination={false}
+              ></Table>
+          </Card>
+
+          <Card title='动态数据展示'>
+              <Table
+                bordered
+                columns={columns} 
+                dataSource={dataSource2} 
                 pagination={false}
               ></Table>
           </Card>
