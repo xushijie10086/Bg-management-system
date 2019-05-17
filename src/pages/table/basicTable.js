@@ -11,7 +11,7 @@ export default class BasicTable extends Component {
     const dataSource = [
       {
         id: "0",
-        key:'0',
+        key: "0",
         name: "Jack",
         sex: "1",
         state: "1",
@@ -23,7 +23,7 @@ export default class BasicTable extends Component {
       },
       {
         id: "1",
-        key:'1',
+        key: "1",
         name: "tom",
         sex: "1",
         state: "1",
@@ -35,7 +35,7 @@ export default class BasicTable extends Component {
       },
       {
         id: "2",
-        key:'2',
+        key: "2",
         name: "lili",
         sex: "1",
         state: "1",
@@ -71,11 +71,11 @@ export default class BasicTable extends Component {
           // ,isShowLoading: false
         }
       })
-      .then(res => {  
-        if(res.code === 0) {
-          res.result.map((item,index)=> {
-            item.key = index
-          })
+      .then(res => {
+        if (res.code === 0) {
+          res.result.map((item, index) => {
+            item.key = index;
+          });
           this.setState({ dataSource2: res.result });
         }
       });
@@ -86,12 +86,12 @@ export default class BasicTable extends Component {
     this.setState({
       selectedRowKeys: selectKey,
       selectedItem: record
-    })
+    });
     Modal.info({
       title: `${record.name}`,
       content: `用户年龄${record.age},住在${record.address}`
-    })
-  }
+    });
+  };
   render() {
     const columns = [
       {
@@ -196,8 +196,8 @@ export default class BasicTable extends Component {
             onRow={(record, index) => {
               return {
                 onClick: () => {
-                  this.handleRowClick(record,index)
-                }, // 点击行
+                  this.handleRowClick(record, index);
+                } // 点击行
                 // onDoubleClick: event => {},
                 // onContextMenu: event => {},
                 // onMouseEnter: event => {}, // 鼠标移入行
